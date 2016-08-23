@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Android Adapters</string>
+
+    <string name="button_monster_adapter_label">Monster Adapter</string>
+    <string name="button_multi_item_adapter_label">Multi Item Adapter</string>
+    <string name="button_shared_view_holder_adapter_label">Shared ViewHolder Adapter</string>
+
+    <string name="separator_header_label">Just a header</string>
+
+</resources>
