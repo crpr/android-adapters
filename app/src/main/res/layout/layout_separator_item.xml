@@ -5,9 +5,9 @@
     android:background="@color/colorAccent">
 
     <TextView
+        android:id="@+id/header_label"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/separator_header_label"
         android:textColor="@color/white"
         android:gravity="center_vertical"
         android:layout_marginStart="@dimen/margin"

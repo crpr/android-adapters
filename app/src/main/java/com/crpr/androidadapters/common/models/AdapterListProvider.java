@@ -1,4 +1,4 @@
-package com.crpr.androidadapters.common;
+package com.crpr.androidadapters.common.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ public class AdapterListProvider {
     public static List<AdapterModel> getModels(){
         List<AdapterModel> models = new ArrayList<>();
 
-        models.add(new AdapterModel());
+        models.add(new AdapterModel(new HeaderDto("Contacts")));
 
         models.add(new AdapterModel(new ContactDto("john doe1", "john.doe1@at.com")));
         models.add(new AdapterModel(new ContactDto("john doe2", "john.doe2@at.com")));
@@ -21,7 +21,7 @@ public class AdapterListProvider {
         models.add(new AdapterModel(new ContactDto("john doe6", "john.doe6@at.com")));
         models.add(new AdapterModel(new ContactDto("john doe7", "john.doe7@at.com")));
 
-        models.add(new AdapterModel());
+        models.add(new AdapterModel(new HeaderDto("Dummy's")));
 
         models.add(new AdapterModel(new DummyDto("left1", "right1")));
         models.add(new AdapterModel(new DummyDto("left2", "right2")));

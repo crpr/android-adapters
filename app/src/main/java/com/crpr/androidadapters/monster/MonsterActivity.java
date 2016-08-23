@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.crpr.androidadapters.R;
-import com.crpr.androidadapters.common.AdapterListProvider;
-import com.crpr.androidadapters.common.AdapterModel;
+import com.crpr.androidadapters.common.models.AdapterListProvider;
+import com.crpr.androidadapters.common.models.AdapterModel;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 
 public class MonsterActivity extends AppCompatActivity {
@@ -22,7 +22,7 @@ public class MonsterActivity extends AppCompatActivity {
 
         overridePendingTransition(0,0);
 
-        setContentView(R.layout.activity_monster);
+        setContentView(R.layout.activity_list);
 
         setupToolbar();
         setupAdapter();

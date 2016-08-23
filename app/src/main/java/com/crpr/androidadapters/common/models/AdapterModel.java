@@ -1,4 +1,4 @@
-package com.crpr.androidadapters.common;
+package com.crpr.androidadapters.common.models;
 
 /**
  * Created by claudioribeiro on 23/08/16.
@@ -7,6 +7,7 @@ public class AdapterModel {
 
     private ContactDto contactDto;
     private DummyDto dummyDto;
+    private HeaderDto headerDto;
 
     public AdapterModel(ContactDto contactDto){
         this.contactDto = contactDto;
@@ -16,10 +17,12 @@ public class AdapterModel {
         this.dummyDto = dummyDto;
     }
 
-    public AdapterModel(){}
+    public AdapterModel(HeaderDto headerDto){
+        this.headerDto = headerDto;
+    }
 
     public boolean isSeparator(){
-        return contactDto == null && dummyDto == null;
+        return headerDto != null;
     }
 
     public ContactDto getContact(){
@@ -28,5 +31,9 @@ public class AdapterModel {
 
     public DummyDto getDummy(){
         return dummyDto;
+    }
+
+    public HeaderDto getHeader(){
+        return headerDto;
     }
 }

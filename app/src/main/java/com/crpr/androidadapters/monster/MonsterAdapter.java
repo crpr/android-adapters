@@ -8,10 +8,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.crpr.androidadapters.R;
-import com.crpr.androidadapters.common.AdapterModel;
-import com.crpr.androidadapters.common.ContactDto;
-import com.crpr.androidadapters.common.DummyDto;
+import com.crpr.androidadapters.common.models.AdapterModel;
+import com.crpr.androidadapters.common.models.ContactDto;
+import com.crpr.androidadapters.common.models.DummyDto;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
+import com.crpr.androidadapters.common.models.HeaderDto;
 
 import java.util.List;
 
@@ -72,8 +73,12 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterV
                 bindDummy((MonsterDummyViewHolder) holder, models.get(position).getDummy());
                 break;
             default:
-                return;
+                bindSeparator((MonsterSeparatorViewHolder) holder, models.get(position).getHeader());
         }
+    }
+
+    private void bindSeparator(MonsterSeparatorViewHolder holder, HeaderDto header){
+        holder.label.setText(header.getLabel());
     }
 
     private void bindDummy(MonsterDummyViewHolder holder, DummyDto dummy) {
@@ -153,8 +158,15 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterV
 
         public static final int SEPARATOR_TYPE = 2;
 
+        TextView label;
+
         public MonsterSeparatorViewHolder(View itemView, RecyclerItemTouchListener recyclerClickListener) {
             super(itemView, recyclerClickListener);
+        }
+
+        @Override
+        protected void bindViews(View itemView) {
+            label = (TextView) itemView.findViewById(R.id.header_label);
         }
     }
 
