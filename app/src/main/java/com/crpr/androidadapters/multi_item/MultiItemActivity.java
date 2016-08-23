@@ -44,7 +44,7 @@ public class MultiItemActivity extends AppCompatActivity {
                     }
                 });
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.monster_list);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);

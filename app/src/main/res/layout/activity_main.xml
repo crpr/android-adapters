@@ -17,7 +17,7 @@
         android:id="@+id/main_multi_button"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
-        android:text="@string/button_multi_item_adapter_label"
+        android:text="@string/button_multi_item_type_adapter_label"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/main_monster_button"
         android:layout_marginTop="@dimen/margin"/>
@@ -26,7 +26,7 @@
         android:id="@+id/main_shared_button"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
-        android:text="@string/button_shared_view_holder_adapter_label"
+        android:text="@string/button_simple_type_adapter_label"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/main_multi_button"
         android:layout_marginTop="@dimen/margin"/>

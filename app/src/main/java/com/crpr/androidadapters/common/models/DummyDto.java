@@ -28,4 +28,9 @@ public class DummyDto {
     public void setRightLabel(String rightLabel) {
         this.rightLabel = rightLabel;
     }
+
+    @Override
+    public String toString() {
+        return leftLabel + " - " + rightLabel;
+    }
 }

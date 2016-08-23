@@ -16,6 +16,7 @@
         </activity>
         <activity android:name=".monster.MonsterActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".multi_item.MultiItemActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".simple_item.SimpleItemActivity" android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

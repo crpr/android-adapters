@@ -32,4 +32,18 @@ public class AdapterListProvider {
         return models;
     }
 
+    public static List<AdapterModel> getContactModels(){
+        List<AdapterModel> models = new ArrayList<>();
+
+        models.add(new AdapterModel(new ContactDto("john doe1", "john.doe1@at.com")));
+        models.add(new AdapterModel(new ContactDto("john doe2", "john.doe2@at.com")));
+        models.add(new AdapterModel(new ContactDto("john doe3", "john.doe3@at.com")));
+        models.add(new AdapterModel(new ContactDto("john doe4", "john.doe4@at.com")));
+        models.add(new AdapterModel(new ContactDto("john doe5", "john.doe5@at.com")));
+        models.add(new AdapterModel(new ContactDto("john doe6", "john.doe6@at.com")));
+        models.add(new AdapterModel(new ContactDto("john doe7", "john.doe7@at.com")));
+
+        return models;
+    }
+
 }

@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.crpr.androidadapters.monster.MonsterActivity;
 import com.crpr.androidadapters.multi_item.MultiItemActivity;
+import com.crpr.androidadapters.simple_item.SimpleItemActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.main_shared_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                launchActivity(SimpleItemActivity.class);
             }
         });
     }
