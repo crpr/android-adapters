@@ -15,9 +15,8 @@ import com.crpr.androidadapters.common.models.AdapterModel;
 public class SimpleItemViewHolder {
 
     static class Contact extends BaseViewHolder<AdapterModel> {
-
-        TextView name;
-        TextView email;
+        private TextView name;
+        private TextView email;
 
         public Contact(View itemView, RecyclerItemTouchListener listener) {
             super(itemView, listener);

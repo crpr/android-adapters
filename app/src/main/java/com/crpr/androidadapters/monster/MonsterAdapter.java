@@ -36,10 +36,10 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterV
         View view;
 
         switch (viewType){
-            case MonsterContactViewHolder.CONTACT_TYPE:
+            case AdapterModel.CONTACT_TYPE:
                 view = inflater.inflate(R.layout.layout_contact_item, parent, false);
                 return new MonsterContactViewHolder(view, listener);
-            case MonsterDummyViewHolder.DUMMY_TYPE:
+            case AdapterModel.DUMMY_TYPE:
                 view = inflater.inflate(R.layout.layout_dummy_item, parent, false);
                 return new MonsterDummyViewHolder(view, listener);
             default:
@@ -51,12 +51,7 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterV
 
     @Override
     public int getItemViewType(int position) {
-        if(models.get(position).isSeparator()){
-            return MonsterSeparatorViewHolder.SEPARATOR_TYPE;
-        }
-
-        return models.get(position).getContact() == null ?
-                MonsterDummyViewHolder.DUMMY_TYPE : MonsterContactViewHolder.CONTACT_TYPE;
+        return models.get(position).getType();
     }
 
     public AdapterModel getItemByPosition(int position){
@@ -66,10 +61,10 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterV
     @Override
     public void onBindViewHolder(MonsterViewHolder holder, int position) {
         switch (getItemViewType(position)){
-            case MonsterContactViewHolder.CONTACT_TYPE:
+            case AdapterModel.CONTACT_TYPE:
                 bindContact((MonsterContactViewHolder) holder, models.get(position).getContact());
                 break;
-            case MonsterDummyViewHolder.DUMMY_TYPE:
+            case AdapterModel.DUMMY_TYPE:
                 bindDummy((MonsterDummyViewHolder) holder, models.get(position).getDummy());
                 break;
             default:
@@ -119,11 +114,8 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterV
     }
 
     static class MonsterContactViewHolder extends MonsterViewHolder {
-
-        public static final int CONTACT_TYPE = 0;
-
-        TextView name;
-        TextView email;
+        private TextView name;
+        private TextView email;
 
         public MonsterContactViewHolder(View itemView, RecyclerItemTouchListener recyclerClickListener) {
             super(itemView, recyclerClickListener);
@@ -137,11 +129,8 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterV
     }
 
     static class MonsterDummyViewHolder extends MonsterViewHolder {
-
-        public static final int DUMMY_TYPE = 1;
-
-        TextView left;
-        TextView right;
+        private TextView left;
+        private TextView right;
 
         public MonsterDummyViewHolder(View itemView, RecyclerItemTouchListener recyclerClickListener) {
             super(itemView, recyclerClickListener);
@@ -155,10 +144,7 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterV
     }
 
     static class MonsterSeparatorViewHolder extends MonsterViewHolder {
-
-        public static final int SEPARATOR_TYPE = 2;
-
-        TextView label;
+        private TextView label;
 
         public MonsterSeparatorViewHolder(View itemView, RecyclerItemTouchListener recyclerClickListener) {
             super(itemView, recyclerClickListener);

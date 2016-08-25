@@ -25,10 +25,10 @@ public class MultiItemViewHolderManager implements ViewHolderManager<AdapterMode
         View view;
 
         switch (viewType){
-            case MultiItemViewHolder.Contact.CONTACT_TYPE:
+            case AdapterModel.CONTACT_TYPE:
                 view = LayoutInflater.from(context).inflate(R.layout.layout_contact_item, parent, false);
                 return MultiItemViewHolder.Contact.getInstance(view, listener);
-            case MultiItemViewHolder.Dummy.DUMMY_TYPE:
+            case AdapterModel.DUMMY_TYPE:
                 view = LayoutInflater.from(context).inflate(R.layout.layout_dummy_item, parent, false);
                 return MultiItemViewHolder.Dummy.getInstance(view, listener);
             default:
@@ -40,11 +40,6 @@ public class MultiItemViewHolderManager implements ViewHolderManager<AdapterMode
 
     @Override
     public int getViewType(List<AdapterModel> models, int position) {
-        if(models.get(position).isSeparator()){
-            return MultiItemViewHolder.Separator.SEPARATOR_TYPE;
-        }
-
-        return models.get(position).getContact() == null ?
-                MultiItemViewHolder.Dummy.DUMMY_TYPE : MultiItemViewHolder.Contact.CONTACT_TYPE;
+        return models.get(position).getType();
     }
 }

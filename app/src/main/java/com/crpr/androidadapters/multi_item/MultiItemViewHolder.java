@@ -15,11 +15,8 @@ import com.crpr.androidadapters.common.models.AdapterModel;
 public class MultiItemViewHolder {
 
     static class Contact extends BaseViewHolder<AdapterModel> {
-
-        public static final int CONTACT_TYPE = 0;
-
-        TextView name;
-        TextView email;
+        private TextView name;
+        private TextView email;
 
         public Contact(View itemView, RecyclerItemTouchListener listener) {
             super(itemView, listener);
@@ -43,11 +40,8 @@ public class MultiItemViewHolder {
     }
 
     static class Dummy extends BaseViewHolder<AdapterModel> {
-
-        public static final int DUMMY_TYPE = 1;
-
-        TextView left;
-        TextView right;
+        private TextView left;
+        private TextView right;
 
         public Dummy(View itemView, RecyclerItemTouchListener listener) {
             super(itemView, listener);
@@ -71,10 +65,7 @@ public class MultiItemViewHolder {
     }
 
     static class Separator extends BaseViewHolder<AdapterModel> {
-
-        public static final int SEPARATOR_TYPE = 2;
-
-        TextView label;
+        private TextView label;
 
         public Separator(View itemView, RecyclerItemTouchListener recyclerClickListener) {
             super(itemView, recyclerClickListener);
