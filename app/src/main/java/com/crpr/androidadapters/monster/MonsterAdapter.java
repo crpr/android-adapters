@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.crpr.androidadapters.R;
-import com.crpr.androidadapters.common.models.AdapterModel;
 import com.crpr.androidadapters.common.models.ContactDto;
 import com.crpr.androidadapters.common.models.DummyDto;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 import com.crpr.androidadapters.common.models.HeaderDto;
+import com.crpr.androidadapters.common.templates.ContactTemplate;
+import com.crpr.androidadapters.common.templates.TemplateModel;
+import com.crpr.androidadapters.common.templates.TwoColumnTemplate;
 
 import java.util.List;
 
@@ -21,11 +23,11 @@ import java.util.List;
  */
 public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterViewHolder>{
 
-    private final List<AdapterModel> models;
+    private final List<TemplateModel> models;
     private final RecyclerItemTouchListener listener;
     private final LayoutInflater inflater;
 
-    public MonsterAdapter(Context context, List<AdapterModel> models, RecyclerItemTouchListener listener){
+    public MonsterAdapter(Context context, List<TemplateModel> models, RecyclerItemTouchListener listener){
         this.inflater = LayoutInflater.from(context);
         this.models = models;
         this.listener = listener;
@@ -36,14 +38,14 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterV
         View view;
 
         switch (viewType){
-            case AdapterModel.CONTACT_TYPE:
+            case ContactTemplate.CONTACT_TYPE:
                 view = inflater.inflate(R.layout.layout_contact_item, parent, false);
                 return new MonsterContactViewHolder(view, listener);
-            case AdapterModel.DUMMY_TYPE:
-                view = inflater.inflate(R.layout.layout_dummy_item, parent, false);
+            case TwoColumnTemplate.TWO_COLUMN_TYPE:
+                view = inflater.inflate(R.layout.layout_two_column_item, parent, false);
                 return new MonsterDummyViewHolder(view, listener);
             default:
-                view = inflater.inflate(R.layout.layout_separator_item, parent, false);
+                view = inflater.inflate(R.layout.layout_header_item, parent, false);
                 return new MonsterSeparatorViewHolder(view, listener);
 
         }
@@ -54,21 +56,21 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.MonsterV
         return models.get(position).getType();
     }
 
-    public AdapterModel getItemByPosition(int position){
+    public TemplateModel getItemByPosition(int position){
         return models.get(position);
     }
 
     @Override
     public void onBindViewHolder(MonsterViewHolder holder, int position) {
         switch (getItemViewType(position)){
-            case AdapterModel.CONTACT_TYPE:
-                bindContact((MonsterContactViewHolder) holder, models.get(position).getContact());
+            case ContactTemplate.CONTACT_TYPE:
+                bindContact((MonsterContactViewHolder) holder, (ContactDto)models.get(position));
                 break;
-            case AdapterModel.DUMMY_TYPE:
-                bindDummy((MonsterDummyViewHolder) holder, models.get(position).getDummy());
+            case TwoColumnTemplate.TWO_COLUMN_TYPE:
+                bindDummy((MonsterDummyViewHolder) holder, (DummyDto) models.get(position));
                 break;
             default:
-                bindSeparator((MonsterSeparatorViewHolder) holder, models.get(position).getHeader());
+                bindSeparator((MonsterSeparatorViewHolder) holder, (HeaderDto) models.get(position));
         }
     }
 

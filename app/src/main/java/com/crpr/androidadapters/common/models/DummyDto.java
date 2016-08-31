@@ -1,9 +1,11 @@
 package com.crpr.androidadapters.common.models;
 
+import com.crpr.androidadapters.common.templates.TwoColumnTemplate;
+
 /**
  * Created by claudioribeiro on 23/08/16.
  */
-public class DummyDto {
+public class DummyDto implements TwoColumnTemplate.TwoColumnTemplateModel{
 
     private String leftLabel;
     private String rightLabel;
@@ -32,5 +34,10 @@ public class DummyDto {
     @Override
     public String toString() {
         return leftLabel + " - " + rightLabel;
+    }
+
+    @Override
+    public int getType() {
+        return TwoColumnTemplate.TWO_COLUMN_TYPE;
     }
 }

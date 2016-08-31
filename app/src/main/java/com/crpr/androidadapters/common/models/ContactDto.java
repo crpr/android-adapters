@@ -1,9 +1,11 @@
 package com.crpr.androidadapters.common.models;
 
+import com.crpr.androidadapters.common.templates.ContactTemplate;
+
 /**
  * Created by claudioribeiro on 23/08/16.
  */
-public class ContactDto {
+public class ContactDto implements ContactTemplate.ContactTemplateModel {
 
     private String name;
     private String email;
@@ -32,5 +34,20 @@ public class ContactDto {
     @Override
     public String toString() {
         return name + " - " + email;
+    }
+
+    @Override
+    public String getTopLabel() {
+        return getName();
+    }
+
+    @Override
+    public String getBottomLabel() {
+        return getEmail();
+    }
+
+    @Override
+    public int getType() {
+        return ContactTemplate.CONTACT_TYPE;
     }
 }

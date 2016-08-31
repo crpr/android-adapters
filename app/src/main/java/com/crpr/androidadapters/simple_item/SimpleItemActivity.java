@@ -5,12 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import com.crpr.androidadapters.R;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 import com.crpr.androidadapters.common.models.AdapterListProvider;
-import com.crpr.androidadapters.common.models.AdapterModel;
+import com.crpr.androidadapters.common.templates.TemplateModel;
 
 public class SimpleItemActivity extends AppCompatActivity {
 
@@ -51,9 +50,9 @@ public class SimpleItemActivity extends AppCompatActivity {
     }
 
     private void handleTouch(int position) {
-        AdapterModel model = adapter.getItemByPosition(position);
+        TemplateModel model = adapter.getItemByPosition(position);
 
-        if(model == null || model.isSeparator()){
+        /*if(model == null || model.getType() == ){
             return;
         }
 
@@ -61,6 +60,6 @@ public class SimpleItemActivity extends AppCompatActivity {
                 model.getDummy().toString() :
                 model.getContact().toString();
 
-        Toast.makeText(this, "INDEX: " + position + " - VALUE: " + message, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "INDEX: " + position + " - VALUE: " + message, Toast.LENGTH_LONG).show();*/
     }
 }

@@ -9,37 +9,40 @@ import com.crpr.androidadapters.R;
 import com.crpr.androidadapters.common.BaseViewHolder;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 import com.crpr.androidadapters.common.ViewHolderManager;
-import com.crpr.androidadapters.common.models.AdapterModel;
+import com.crpr.androidadapters.common.templates.ContactTemplate;
+import com.crpr.androidadapters.common.templates.HeaderTemplate;
+import com.crpr.androidadapters.common.templates.TemplateModel;
+import com.crpr.androidadapters.common.templates.TwoColumnTemplate;
 
 import java.util.List;
 
 /**
  * Created by claudioribeiro on 23/08/16.
  */
-public class MultiItemViewHolderManager implements ViewHolderManager<AdapterModel> {
+public class MultiItemViewHolderManager implements ViewHolderManager<TemplateModel> {
 
     @Override
-    public BaseViewHolder<AdapterModel> build(Context context, ViewGroup parent, int viewType,
+    public BaseViewHolder<TemplateModel> build(Context context, ViewGroup parent, int viewType,
                                               RecyclerItemTouchListener listener) {
 
         View view;
 
         switch (viewType){
-            case AdapterModel.CONTACT_TYPE:
+            case ContactTemplate.CONTACT_TYPE:
                 view = LayoutInflater.from(context).inflate(R.layout.layout_contact_item, parent, false);
-                return MultiItemViewHolder.Contact.getInstance(view, listener);
-            case AdapterModel.DUMMY_TYPE:
-                view = LayoutInflater.from(context).inflate(R.layout.layout_dummy_item, parent, false);
-                return MultiItemViewHolder.Dummy.getInstance(view, listener);
+                return ContactTemplate.getInstance(view, listener);
+            case TwoColumnTemplate.TWO_COLUMN_TYPE:
+                view = LayoutInflater.from(context).inflate(R.layout.layout_two_column_item, parent, false);
+                return TwoColumnTemplate.getInstance(view, listener);
             default:
-                view = LayoutInflater.from(context).inflate(R.layout.layout_separator_item, parent, false);
-                return MultiItemViewHolder.Separator.getInstance(view, listener);
+                view = LayoutInflater.from(context).inflate(R.layout.layout_header_item, parent, false);
+                return HeaderTemplate.getInstance(view, listener);
 
         }
     }
 
     @Override
-    public int getViewType(List<AdapterModel> models, int position) {
+    public int getViewType(List<TemplateModel> models, int position) {
         return models.get(position).getType();
     }
 }
