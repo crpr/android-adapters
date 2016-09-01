@@ -5,7 +5,7 @@ import com.crpr.androidadapters.common.templates.TwoColumnTemplate;
 /**
  * Created by claudioribeiro on 23/08/16.
  */
-public class DummyDto implements TwoColumnTemplate.TwoColumnTemplateModel{
+public class DummyDto implements TwoColumnTemplate.Model {
 
     private String leftLabel;
     private String rightLabel;

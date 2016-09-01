@@ -5,7 +5,7 @@ import com.crpr.androidadapters.common.templates.TwoColumnTemplate;
 /**
  * Created by claudioribeiro on 23/08/16.
  */
-public class ColumnsDto implements TwoColumnTemplate.TwoColumnTemplateModel{
+public class ColumnsDto implements TwoColumnTemplate.Model {
 
     private String leftColLabel;
     private String rightColLabel;

@@ -2,6 +2,7 @@ package com.crpr.androidadapters.common;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.List;
 public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder<T>> {
 
     private final Context context;
+    private final LayoutInflater inflater;
     protected final ViewHolderManager<T> holderManager;
     protected List<T> models;
     private final RecyclerItemTouchListener listener;
@@ -20,6 +22,7 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
     public BaseAdapter(Context context, ViewHolderManager<T> manager, List<T> models,
                        RecyclerItemTouchListener listener){
         this.context = context;
+        this.inflater = LayoutInflater.from(context);
         this.holderManager = manager;
         this.models = models;
         this.listener = listener;
@@ -27,7 +30,7 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder
 
     @Override
     public BaseViewHolder<T> onCreateViewHolder(ViewGroup parent, int viewType) {
-        return holderManager.build(context, parent, viewType, listener);
+        return holderManager.build(inflater, parent, viewType, listener);
     }
 
     @Override

@@ -1,11 +1,8 @@
 package com.crpr.androidadapters.simple_item;
 
-import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
-import com.crpr.androidadapters.R;
 import com.crpr.androidadapters.common.BaseViewHolder;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 import com.crpr.androidadapters.common.ViewHolderManager;
@@ -20,11 +17,9 @@ import java.util.List;
 public class SimpleItemViewHolderManager implements ViewHolderManager<TemplateModel> {
 
     @Override
-    public BaseViewHolder<TemplateModel> build(Context context, ViewGroup parent, int viewType,
-                                              RecyclerItemTouchListener listener) {
-
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_contact_item, parent, false);
-        return ContactTemplate.getInstance(view, listener);
+    public BaseViewHolder<TemplateModel> build(LayoutInflater inflater, ViewGroup parent, int viewType,
+                                               RecyclerItemTouchListener listener) {
+        return new ContactTemplate().build(inflater,parent,listener);
     }
 
     @Override

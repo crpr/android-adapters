@@ -1,6 +1,6 @@
 package com.crpr.androidadapters.common;
 
-import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface ViewHolderManager<T> {
 
-    BaseViewHolder<T> build(Context context, ViewGroup parent, int viewType,
+    BaseViewHolder<T> build(LayoutInflater inflater, ViewGroup parent, int viewType,
                             RecyclerItemTouchListener listener);
 
     int getViewType(List<T> models, int position);

@@ -1,11 +1,8 @@
 package com.crpr.androidadapters.multi_item;
 
-import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
-import com.crpr.androidadapters.R;
 import com.crpr.androidadapters.common.BaseViewHolder;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 import com.crpr.androidadapters.common.ViewHolderManager;
@@ -22,21 +19,16 @@ import java.util.List;
 public class MultiItemViewHolderManager implements ViewHolderManager<TemplateModel> {
 
     @Override
-    public BaseViewHolder<TemplateModel> build(Context context, ViewGroup parent, int viewType,
+    public BaseViewHolder<TemplateModel> build(LayoutInflater inflater, ViewGroup parent, int viewType,
                                               RecyclerItemTouchListener listener) {
-
-        View view;
 
         switch (viewType){
             case ContactTemplate.CONTACT_TYPE:
-                view = LayoutInflater.from(context).inflate(R.layout.layout_contact_item, parent, false);
-                return ContactTemplate.getInstance(view, listener);
+                return new ContactTemplate().build(inflater, parent, listener);
             case TwoColumnTemplate.TWO_COLUMN_TYPE:
-                view = LayoutInflater.from(context).inflate(R.layout.layout_two_column_item, parent, false);
-                return TwoColumnTemplate.getInstance(view, listener);
+                return new TwoColumnTemplate().build(inflater, parent, listener);
             default:
-                view = LayoutInflater.from(context).inflate(R.layout.layout_header_item, parent, false);
-                return HeaderTemplate.getInstance(view, listener);
+                return new HeaderTemplate().build(inflater, parent, listener);
 
         }
     }
