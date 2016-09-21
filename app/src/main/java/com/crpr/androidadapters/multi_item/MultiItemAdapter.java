@@ -5,7 +5,7 @@ import android.content.Context;
 import com.crpr.androidadapters.common.BaseAdapter;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 import com.crpr.androidadapters.common.ViewHolderManager;
-import com.crpr.androidadapters.common.templates.TemplateModel;
+import com.crpr.androidadapters.common.TemplateModel;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.crpr.androidadapters.common.templates;
+package com.crpr.androidadapters.common;
 
 /**
  * Created by claudioribeiro on 31/08/16.

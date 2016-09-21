@@ -13,7 +13,7 @@ import com.crpr.androidadapters.common.models.DummyDto;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 import com.crpr.androidadapters.common.models.HeaderDto;
 import com.crpr.androidadapters.common.templates.ContactTemplate;
-import com.crpr.androidadapters.common.templates.TemplateModel;
+import com.crpr.androidadapters.common.TemplateModel;
 import com.crpr.androidadapters.common.templates.TwoColumnTemplate;
 
 import java.util.List;

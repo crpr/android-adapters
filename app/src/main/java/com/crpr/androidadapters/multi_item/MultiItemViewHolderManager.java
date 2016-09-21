@@ -8,8 +8,9 @@ import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 import com.crpr.androidadapters.common.ViewHolderManager;
 import com.crpr.androidadapters.common.templates.ContactTemplate;
 import com.crpr.androidadapters.common.templates.HeaderTemplate;
-import com.crpr.androidadapters.common.templates.TemplateModel;
+import com.crpr.androidadapters.common.TemplateModel;
 import com.crpr.androidadapters.common.templates.TwoColumnTemplate;
+import com.crpr.androidadapters.generated.AnnotationContactTemplateBuilder;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class MultiItemViewHolderManager implements ViewHolderManager<TemplateMod
 
         switch (viewType){
             case ContactTemplate.CONTACT_TYPE:
-                return new ContactTemplate().build(inflater, parent, listener);
+                new AnnotationContactTemplateBuilder().build(inflater, parent, listener);
             case TwoColumnTemplate.TWO_COLUMN_TYPE:
                 return new TwoColumnTemplate().build(inflater, parent, listener);
             default:

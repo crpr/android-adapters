@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import com.crpr.androidadapters.common.BaseViewHolder;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 import com.crpr.androidadapters.common.ViewHolderManager;
-import com.crpr.androidadapters.common.templates.ContactTemplate;
-import com.crpr.androidadapters.common.templates.TemplateModel;
+import com.crpr.androidadapters.common.TemplateModel;
+import com.crpr.androidadapters.generated.AnnotationContactTemplateBuilder;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class SimpleItemViewHolderManager implements ViewHolderManager<TemplateMo
     @Override
     public BaseViewHolder<TemplateModel> build(LayoutInflater inflater, ViewGroup parent, int viewType,
                                                RecyclerItemTouchListener listener) {
-        return new ContactTemplate().build(inflater,parent,listener);
+        return new AnnotationContactTemplateBuilder().build(inflater,parent,listener);
     }
 
     @Override

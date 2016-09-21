@@ -9,7 +9,7 @@ import android.view.View;
 import com.crpr.androidadapters.R;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
 import com.crpr.androidadapters.common.models.AdapterListProvider;
-import com.crpr.androidadapters.common.templates.TemplateModel;
+import com.crpr.androidadapters.common.TemplateModel;
 
 public class MultiItemActivity extends AppCompatActivity {
 

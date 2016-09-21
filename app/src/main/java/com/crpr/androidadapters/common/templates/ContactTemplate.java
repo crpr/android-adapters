@@ -10,12 +10,11 @@ import com.crpr.androidadapters.R;
 import com.crpr.androidadapters.common.BaseTemplate;
 import com.crpr.androidadapters.common.BaseViewHolder;
 import com.crpr.androidadapters.common.RecyclerItemTouchListener;
-import com.crpr.androidadapters.processor.AdapterTemplate;
+import com.crpr.androidadapters.common.TemplateModel;
 
 /**
  * Created by claudioribeiro on 31/08/16.
  */
-@AdapterTemplate
 public class ContactTemplate extends BaseTemplate<TemplateModel> {
 
     public static final int CONTACT_TYPE = 0;

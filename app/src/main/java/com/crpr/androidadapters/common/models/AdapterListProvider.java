@@ -1,6 +1,6 @@
 package com.crpr.androidadapters.common.models;
 
-import com.crpr.androidadapters.common.templates.TemplateModel;
+import com.crpr.androidadapters.common.TemplateModel;
 
 import java.util.ArrayList;
 import java.util.List;
